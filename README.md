@@ -7,7 +7,7 @@
 #   find 5 such assets/symbol which has the least differences between bidPrice and askPrice - done, but I get whole element.
 
 # All tests suit can be run in two ways: 
-# 1) from /test/java/runner folder all suites run under default browser = Chrome:
+# 1) from /test/java/runner folder, run TestSuite.java.
 # 2) In Terminal using:  mvn clean test
 
 # How to create surefire report:
