@@ -13,7 +13,6 @@ import java.util.Map;
 import static tests.utils.UtilsMethods.*;
 
 public class JsonDataValidationTests {
-
     List<JsonElementModel> json_modelList = ValidateResponse.getListJSON(EndPointUrl.TICKERS.getPath());
 
     @Test

@@ -3,7 +3,6 @@ package tests.utils;
 import models.JsonElementModel;
 import org.junit.jupiter.api.Assertions;
 
-import java.math.BigInteger;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -84,6 +83,7 @@ public class UtilsMethods {
 
         return outputMap;
     }
+
     public static void checkJsonElementConsistency(JsonElementModel element) {
         Assertions.assertNotNull(element.getSymbol(), element.toString());
         Assertions.assertFalse(element.getSymbol().isEmpty());
@@ -107,6 +107,7 @@ public class UtilsMethods {
         Assertions.assertFalse(element.getAskPrice().isNaN());
         Assertions.assertNotNull(element.getAt(), element.toString());
     }
+
     public static void checkPricesNotNegative(JsonElementModel element) {
         Assertions.assertTrue(element.getOpenPrice() > 0, element.toString());
         Assertions.assertTrue(element.getLowPrice() > 0, element.toString());

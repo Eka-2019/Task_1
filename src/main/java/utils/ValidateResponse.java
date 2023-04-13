@@ -5,11 +5,9 @@ import io.restassured.response.ValidatableResponse;
 import models.JsonElementModel;
 import org.apache.log4j.Logger;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.List;
 
 import static io.restassured.RestAssured.given;
-import static java.util.Map.Entry.comparingByValue;
 import static utils.BaseURL.BASE_URI;
 
 public class ValidateResponse {
@@ -25,6 +23,7 @@ public class ValidateResponse {
     }
 
     public static List<JsonElementModel> getListJSON(String path) {
+        LOGGER.info("Getting Json");
         return getRequest(path).extract()
                 .jsonPath().getList(".", JsonElementModel.class);
     }

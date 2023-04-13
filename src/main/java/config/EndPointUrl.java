@@ -1,8 +1,6 @@
 package config;
 
 import lombok.Getter;
-import org.apache.log4j.Logger;
-import utils.ValidateResponse;
 
 @Getter
 public enum EndPointUrl {
