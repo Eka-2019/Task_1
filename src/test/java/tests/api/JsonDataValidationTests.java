@@ -1,19 +1,14 @@
 package tests.api;
 
-import config.EndPointUrl;
 import models.JsonElementModel;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import utils.ValidateResponse;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import static tests.utils.UtilsMethods.*;
 
-public class JsonDataValidationTests {
-    List<JsonElementModel> json_modelList = ValidateResponse.getListJSON(EndPointUrl.TICKERS.getPath());
+public class JsonDataValidationTests extends BaseTest{
 
     @Test
     public void JSONDataBodyConsistencyTest() {
@@ -52,7 +47,7 @@ public class JsonDataValidationTests {
                 count++;
             }
         }
-        Assertions.assertEquals(1, count);
+        checkThatExpectedResultIsEqualActualResult(1, count);
     }
 
 }

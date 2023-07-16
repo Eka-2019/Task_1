@@ -9,8 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.hamcrest.Matchers.lessThan;
 
-public class APITests {
-    ValidatableResponse response = ValidateResponse.getRequest(EndPointUrl.TICKERS.getPath());
+public class APITests extends BaseTest{
 
     @Test
     public void JSONStatusTest() {

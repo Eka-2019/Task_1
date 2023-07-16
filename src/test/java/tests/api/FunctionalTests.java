@@ -1,25 +1,20 @@
 package tests.api;
 
-import config.EndPointUrl;
 import models.JsonElementModel;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import tests.utils.UtilsMethods;
-import utils.ValidateResponse;
 
 import java.util.List;
 import java.util.Map;
 
-public class TasksTests {
-    List<JsonElementModel> json_modelList = ValidateResponse.getListJSON(EndPointUrl.TICKERS.getPath());
-
+public class FunctionalTests extends BaseTest {
     @Test
     public void getElementsWithOpenPriceLessThanLowPriceTest() {
         List<JsonElementModel> openPriceIsLessThanLowPriceList = UtilsMethods.getOpenPriceIsLessThanLowPrice(json_modelList);
         for (JsonElementModel element : openPriceIsLessThanLowPriceList) {
             System.out.println(element);
         }
-        Assertions.assertEquals(0, openPriceIsLessThanLowPriceList.size());
+        checkThatExpectedResultIsEqualActualResult(0, openPriceIsLessThanLowPriceList.size());
     }
 
     @Test
@@ -28,7 +23,7 @@ public class TasksTests {
         for (JsonElementModel element : baseAssetVolumeHigherThanAverageList) {
             System.out.println(element);
         }
-        Assertions.assertEquals(8, baseAssetVolumeHigherThanAverageList.size());
+        checkThatExpectedResultIsEqualActualResult(11, baseAssetVolumeHigherThanAverageList.size());
     }
 
     @Test
@@ -40,7 +35,7 @@ public class TasksTests {
             System.out.println("Element data/key: " + element.getKey());
             System.out.println("Element difference/value: " + element.getValue());
         }
-        Assertions.assertEquals(5, fiveAssetMap.size());
+        checkThatExpectedResultIsEqualActualResult(5, fiveAssetMap.size());
 
     }
 
